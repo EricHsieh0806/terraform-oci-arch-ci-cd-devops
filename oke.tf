@@ -30,6 +30,7 @@ module "oci-oke" {
   is_nodepool_subnet_public                                                   = false
   nodepool_subnet_id                                                          = oci_core_subnet.oke_nodes_subnet[0].id
   ssh_public_key                                                              = var.generate_public_ssh_key ? tls_private_key.oke_worker_node_ssh_key.public_key_openssh : var.public_ssh_key
+  node_image_id                                                               = "ocid1.image.oc1.ap-singapore-1.aaaaaaaao4eeuiah5fba2qfsj6rrtv3qd4cbehr6w7umtz4nprpq354iu3ka"
   defined_tags                                                                = { "${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
 }
 
