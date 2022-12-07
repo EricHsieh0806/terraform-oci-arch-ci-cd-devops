@@ -35,7 +35,6 @@ module "oci-oke" {
 }
 
 
-
 resource "oci_identity_compartment" "oke_compartment" {
   compartment_id = var.compartment_ocid
   name           = "oke-compartment-${random_string.deploy_id.result}"
